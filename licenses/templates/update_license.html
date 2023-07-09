@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <main class="container">
+    <div class="row">
+      <div class="col-md-4 offset-md-4">
+        <h1 class="text-center border border-dark rounded mt-3 mb-3">Update License</h1>
+        <form method="POST" class="card card-body">
+         {% csrf_token %} 
+         {{ form.as_p }}
+         <button class="btn btn-dark">Update</button>
+       </form>
+      </div>
+    </div>
+  </main>
+{% endblock %}

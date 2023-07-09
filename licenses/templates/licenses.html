@@ -1,0 +1,39 @@
+{% extends 'base.html' %} {% block content %}
+<style>
+  .no-link-decoration {
+    text-decoration: none;
+  }
+</style>
+
+<main class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1 class="fw-bold text-center border border-dark rounded mt-3">Licenses</h1>
+
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        {% for license in licenses %}
+        <div class="col">
+          <a class="card text-decoration-none border border-dark rounded" href="{% url 'license_detail' license.id %}">
+            <div class="card-body">
+              <h3 class="card-title fw-bold no-link-decoration">Company Name:</h3>
+              <h4 class="card-text no-link-decoration">{{ license.companyname }}</h4>
+              <h3 class="card-title fw-bold no-link-decoration">User Full Name (user):</h3>
+              <h4 class="card-text no-link-decoration">{{ license.username }}</h4>
+              <h3 class="card-title fw-bold no-link-decoration">E-mail:</h3>
+              <h4 class="card-text no-link-decoration">{{ license.email }}</h4>
+              <h3 class="card-title fw-bold no-link-decoration">Software Username:</h3>
+              <h4 class="card-text no-link-decoration">{{ license.softwareusername }}</h4>
+              <h3 class="card-title fw-bold no-link-decoration">Expiration Date:</h3>
+              <h4 class="card-text no-link-decoration">{{ license.expirationdate }}</h4>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </div>
+</main>
+
+
+{% endblock %}

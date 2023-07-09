@@ -1,0 +1,45 @@
+{% extends 'base.html' %} 
+{% block content %}
+<main class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1 class="fw-bold text-center border border-dark rounded mt-3">License Details</h1>
+
+      <div class="card border border-dark rounded">
+        <div class="card-body">
+          <h6 class="text-center">-- Requiered --</h6>
+          <h5 class="card-title fw-bold">Company Name:</h5>
+          <p class="card-text">{{ license.companyname }}</p>
+          <h5 class="card-title fw-bold">User Full Name:</h5>
+          <p class="card-text">{{ license.username }}</p>
+          <h5 class="card-title fw-bold">Job Title:</h5>
+          <p class="card-text">{{ license.jobtitle }}</p>
+          <h5 class="card-title fw-bold">E-mail:</h5>
+          <p class="card-text">{{ license.email }}</p>
+          <h5 class="card-title fw-bold">Software Username:</h5>
+          <p class="card-text">{{ license.softwareusername }}</p>
+          <h5 class="card-title fw-bold">Expiration Date:</h5>
+          <p class="card-text">{{ license.expirationdate }}</p>
+          <h5 class="card-title fw-bold">Version:</h5>
+          <p class="card-text">{{ license.version }}</p>
+          <h6 class="text-center">-- Added --</h6>
+          <h5 class="card-title fw-bold">Created At:</h5>
+          <p class="card-text">{{ license.created }}</p>
+          <h5 class="card-title fw-bold">AppSmiths Username:</h5>
+          <p class="card-text">{{ license.user }}</p>
+        </div>
+        <div class="text-center mt-3 mb-4">
+          <a href="{% url 'update_license' license.id %}" class="btn btn-dark">Update</a>
+          <form action="{% url 'delete_license' license.id %}" method="POST" class="d-inline">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
+        </div>
+      </div>
+
+      
+
+    </div>
+  </div>
+</main>
+{% endblock %}

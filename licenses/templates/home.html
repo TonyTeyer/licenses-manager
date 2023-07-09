@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% block content %}
+<main class="container py-5">
+  <section class="card card-body">
+    <h1 class="display-1 row justify-content-center">
+      Software Licenses Manager
+    </h1>
+    <p>
+      This is a CRUD application that manage software licenses. We can register
+      with a username and password or log in if we already have an existing
+      account. Upon logging in, the Home, Login, and Signup buttons disappear
+      from the navigation bar as they are no longer needed. The navigation bar
+      will display three buttons:<br>
+      <br>The first one (My Licenses) is for viewing the
+      registered licenses. 
+      <br>The second one (Create Software Licenses) is for
+      creating a new license.
+      <br>The third button is for logging out.<br> 
+      <br>In "My
+      Licenses" panel, we can see the most important details of each license. If we want to
+      view the details of a specific license by its ID, we can simply click on
+      it. Within the details panel, we have the option to modify or delete the
+      record.<br> 
+      <br>All relevant routes are properly protected to prevent unauthorized
+      access to create, view, modify, or delete operations without being logged
+      in. If someone tries to access a protected URL without being logged in,
+      they will be redirected to the login page.
+    </p>
+    <div class="text-center">
+      <a class="btn btn-dark" href="/signin/"> Login </a>
+      <a class="btn btn-dark" href="/signup/"> Signup </a>
+    </div>
+  </section>
+</main>
+
+{% endblock %}
+     
